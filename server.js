@@ -70,9 +70,16 @@ const __dirname = path.resolve();
 // app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 if (process.env.NODE_ENV === 'production') { // For deployment purposes
-    app.use(express.static(path.join(__dirname, '/frontend/build')));
+    //app.use(express.static(path.join(__dirname, '/frontend/build')));
+    // Define the URL of the frontend server
+    const frontendURL = "https://www.example.com";
+    
+    // Redirect all requests to the frontend server
+    app.get('*', (req, res) => {
+        res.redirect(frontendURL + req.originalUrl);
+    });
 
-    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
+    // app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
 } else {
     app.get('/', (req, res) => {
         res.send('API is running...');
