@@ -21,7 +21,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-  origin: "https://anansesem-shop.onrender.com",
+  origin: ["https://anansesem-shop.onrender.com", "https://www.ananses3m.com"],
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
