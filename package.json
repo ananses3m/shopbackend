@@ -16,6 +16,7 @@
   "author": "Kwaku Appau-Nkansah",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.27.0",
     "dotenv": "^10.0.0",
